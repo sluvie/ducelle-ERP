@@ -1,0 +1,2 @@
+# ducelle-ERP
+Open ERP
