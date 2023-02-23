@@ -1,0 +1,27 @@
+input[type="text"]:disabled {
+    background: #a1a1a159;
+}
+
+select option {
+    background-color: black;
+}
+
+.datepicker:hover {
+    background-color: black;
+}
+
+.notes-information p {
+    margin: 0;
+}
+
+.notes-information img {
+    width: 100%;
+}
+
+.text-information p {
+    margin: 0;
+}
+
+.text-information img {
+    width: 75%;
+}
