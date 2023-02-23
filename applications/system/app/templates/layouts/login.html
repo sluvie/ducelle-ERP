@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% import "macros.html" as m %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Vendor styles -->
+    <link rel="stylesheet" href="static/vendors/zwicon/zwicon.min.css">
+    <link rel="stylesheet" href="static/vendors/animate.css/animate.min.css">
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="static/css/app.min.css">
+
+    {% block css %} {% endblock %}
+</head>
+
+<body data-sa-theme="2">
+    <!-- Message flashing -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="messages-block text-center p-5 card">
+        {% for category, message in messages %}
+        <div class="ui {{ category }} message flash">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+
+    <!-- Javascript -->
+    <!-- Vendors -->
+    <script src="static/vendors/jquery/jquery.min.js"></script>
+    <script src="static/vendors/popper.js/popper.min.js"></script>
+    <script src="static/vendors/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- App functions and actions -->
+    <script src="static/js/app.min.js"></script>
+
+    {% block script %} {% endblock %}
+</body>
+
+</html>

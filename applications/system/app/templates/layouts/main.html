@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% import "macros.html" as m %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Vendor styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/zwicon/zwicon.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/animate.css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/overlay-scrollbars/OverlayScrollbars.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/fullcalendar/core/main.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/fullcalendar/daygrid/main.min.css') }}">
+
+    <!-- Datepicker -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css') }}">
+
+    <!-- sweetalert -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/sweetalert2/sweetalert2.min.css') }}">
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+
+    {% block css %} {% endblock %}
+</head>
+
+<body data-sa-theme="2">
+    <!-- Message flashing -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="messages-block">
+        {% for category, message in messages %}
+        <div class="ui {{ category }} message flash">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <main class="main">
+        {% include 'frames/header.html' %}
+        {% include 'frames/sidebar.html' %}
+
+        <section class="content">
+            {% block content %}{% endblock %}
+            {% include 'frames/footer.html' %}
+        </section>
+    </main>
+
+    <!-- Javascript -->
+    <!-- Vendors -->
+    <script src="{{ url_for('static', filename='vendors/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/popper.js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/overlay-scrollbars/jquery.overlayScrollbars.min.js') }}"></script>
+
+    <!-- Vendors: Data tables -->
+    <script src="{{ url_for('static', filename='vendors/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/datatables/datatables-buttons/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/datatables/datatables-buttons/buttons.print.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/jszip/jszip.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/datatables/datatables-buttons/buttons.html5.min.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='vendors/flot/jquery.flot.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/flot/jquery.flot.resize.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/flot/flot.curvedlines/curvedLines.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/peity/jquery.peity.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/jqvmap/jquery.vmap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/jqvmap/maps/jquery.vmap.world.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/jquery.easy-pie-chart/jquery.easypiechart.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/fullcalendar/core/main.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/fullcalendar/daygrid/main.min.js') }}"></script>
+
+    <!-- Datepicker -->
+    <script src="{{ url_for('static', filename='vendors/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js') }}"></script>
+
+    <!-- jquery loadingoverlay -->
+	<script src="{{ url_for('static', filename='vendors/jquery/jquery-loadingoverlay/2.1.7/js/loadingoverlay.min.js') }}"></script>
+
+    <!-- sweetalert -->
+    <script src="{{ url_for('static', filename='vendors/sweetalert2/sweetalert2.all.min.js') }}"></script>
+
+    <!-- App functions and actions -->
+    <script src="{{ url_for('static', filename='js/app.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vie.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/default.js') }}"></script>
+
+    {% block script %} {% endblock %}
+</body>
+
+</html>
