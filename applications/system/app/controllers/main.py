@@ -12,7 +12,11 @@ from app import config
 @app.before_request
 def before_request():
     g.user = None
-    if 'user' in session:
+
+    if config.DEBUG:
+        session['user'] = config.USER_DUMMY
+
+    elif 'user' in session:
         # find user based on userid, update information user
         user = session['user']
         g.user = user

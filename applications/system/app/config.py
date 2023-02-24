@@ -7,6 +7,12 @@ APP_NAME = "ducelle-System"
 # DEBUG can only be set to True in a development environment for security reasons
 DEBUG = True
 
+# user session dummy
+USER_DUMMY = {
+    "accountname": "Sulianto Suhono",
+    "accountemail": "sulianto.suhono@gmail.com"
+}
+
 # secret key for generating tokens
 SECRET_KEY = "ducelle-system-2023"
 
@@ -56,5 +62,5 @@ LOG_MAXBYTES = 1024
 LOG_BACKUPS = 2
 
 # Application
-APP_TITLE = "Ducelle System"
+APP_TITLE = "ducelle-ERP"
 APP_VERSION = "1.0.0"
