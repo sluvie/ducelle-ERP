@@ -1,0 +1,34 @@
+<aside class="sidebar ">
+    <div class="scrollbar">
+        <div class="user">
+            <div class="user__info" data-toggle="dropdown">
+                <img class="user__img" src="{{ url_for('static', filename='img/user/profile.png') }}" alt="">
+                <div>
+                    <div class="user__name">{{ session['user']['accountname'] }}</div>
+                    <div class="user__email">{{ session['user']['accountemail'] }}</div>
+                </div>
+            </div>
+
+            <div class="dropdown-menu dropdown-menu--invert">
+                <a class="dropdown-item" href="">View Profile</a>
+                <a class="dropdown-item" href="">Settings</a>
+                <a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </div>
+
+        <ul class="navigation">
+            <li class="navigation__active"><a href="index.html"><i class="zwicon-home"></i> Home</a></li>
+
+            <li class="navigation__sub">
+                <a href=""><i class="zwicon-three-h"></i> Kata Saham</a>
+
+                <ul>
+                    <li><a href="{{ url_for('idxstocksbp.list') }}">Emitens</a></li>
+                    <li><a href="{{ url_for('idxstocksbp.report_1') }}">Report</a></li>
+                    <li><a href="{{ url_for('idxstocksbp.report_2') }}">Indicator (Buy|Sell)</a></li>
+                    <li><a href="{{ url_for('idxstocksbp.portofolio') }}">Portofolio</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</aside>

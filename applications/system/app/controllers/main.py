@@ -21,8 +21,8 @@ def before_request():
 @app.route('/', methods = ['GET'])
 @app.route("/index")
 def index():
-    if not g.user:
-        return redirect(url_for('login'))
+    #if not g.user:
+    #    return redirect(url_for('login'))
     
-    user = g.user      
+    #user = g.user      
     return render_template('index.html', title=config.APP_TITLE)
