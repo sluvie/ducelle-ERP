@@ -36,11 +36,13 @@ def login():
 def signup():
         try:
                 account = {
-                        'name': request.form.get('name'),
-                        'email': request.form.get('email'),
-                        'password': request.form.get('password'),
+                        'name': request.form.get('accountname'),
+                        'username': request.form.get('accountusername'),
+                        'email': request.form.get('accountemail'),
+                        'password': request.form.get('accountpassword'),
                         'createby': 'signup'
                 }
+                print(account)
 
                 user_m = User_m()
                 

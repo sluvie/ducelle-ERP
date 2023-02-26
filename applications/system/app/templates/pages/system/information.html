@@ -1,0 +1,49 @@
+{% extends 'layouts/main.html' %}
+
+{% block content %}
+
+<header class="content__title">
+    <h1>Information <small>System information platform!</small></h1>
+</header>
+
+<div class="card">
+    <div class="card-body">
+        <div class="toolbar">
+            <div class="toolbar__nav">
+                <h4 class="card-title">System Name {{ platform.system }}</h4>
+            </div>
+
+            <div class="actions">
+                <a href="" class="actions__item zwicon-refresh-double"></a>
+            </div>
+        </div>
+
+        <div class="row p-2">
+            <div class="col-md-2 font-weight-bold">Node</div>
+            <div class="col-md-10">{{ platform.node }}</div>
+
+            <div class="col-md-2 font-weight-bold">Release</div>
+            <div class="col-md-10">{{ platform.release }}</div>
+
+            <div class="col-md-2 font-weight-bold">Version</div>
+            <div class="col-md-10">{{ platform.version }}</div>
+
+            <div class="col-md-2 font-weight-bold">Machine</div>
+            <div class="col-md-10">{{ platform.machine }}</div>
+
+            <div class="col-md-2 font-weight-bold">Processor</div>
+            <div class="col-md-10">{{ platform.processor }}</div>
+
+            <div class="col-md-2 font-weight-bold">CPU Usage</div>
+            <div class="col-md-10">{{ platform.cpuusage }}%</div>
+
+            <div class="col-md-2 font-weight-bold">RAM memory % used</div>
+            <div class="col-md-10">{{ platform.ramusagepercentage }}%</div>
+
+            <div class="col-md-2 font-weight-bold">RAM Used (GB)</div>
+            <div class="col-md-10">{{ "{:,.2f}".format(platform.ramusage) }} of {{ "{:,.2f}".format(platform.ram) }} GB</div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -37,20 +37,13 @@ MAIL_ACCOUNT = [
 
 # Configuration of a Database account
 DATABASE_ACCOUNT = {
-        "memedb": {
+        "ducellesystem_db": {
             "server": "51.79.206.3",
             "port": 5499,
-            "user": "meme",
-            "password": "meme",
-            "database": "memedb",
+            "user": "ducellesystem",
+            "password": "iamducellesystem",
+            "database": "ducellesystem_db",
         },
-        "katasahamdb": {
-            "server": "51.79.206.3",
-            "port": 5499,
-            "user": "katasaham",
-            "password": "katasaham",
-            "database": "katasahamdb",
-        }
     }
 
 # Number of times a password is hashed

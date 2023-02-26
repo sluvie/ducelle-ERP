@@ -18,3 +18,4 @@ app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024
 from app.controllers import  *
 
 # TODO: add your blueprint page in here
+app.register_blueprint(system.systembp)
