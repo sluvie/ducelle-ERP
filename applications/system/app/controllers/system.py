@@ -33,7 +33,6 @@ def index():
 
     # Calling psutil.cpu_precent() for 4 seconds
     cpu_usage = psutil.cpu_percent(4)
-
     print(psutil.virtual_memory())
 
     return render_template(

@@ -15,6 +15,7 @@ USER_DUMMY = {
 
 # secret key for generating tokens
 SECRET_KEY = "ducelle-system-2023"
+AES_KEY = "ducelle-system-2023"
 
 # Admin credentials
 ADMIN_CREDENTIALS = ('admin', 'Pa$$word1')

@@ -13,6 +13,9 @@ from app import config
 # database
 from app.models.user import User_m
 
+# libraries
+from app.libraries.cipher import AESCipher
+
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
@@ -40,22 +43,27 @@ def signup():
                         'username': request.form.get('accountusername'),
                         'email': request.form.get('accountemail'),
                         'password': request.form.get('accountpassword'),
-                        'createby': 'signup'
+                        'secretkey': '',
+                        'createby': 'system-signup'
                 }
-                print(account)
-
                 user_m = User_m()
                 
                 # validate the email
                 # if already exist show the message
-                validate = user_m.validate_register_account(account['email'])
+                validate = user_m.validate_register(account['email'])
                 if validate:
                         flash('User already exist.')
                         return render_template('pages/login.html', title=config.APP_TITLE)
                 else:
-                        user_m.insert([account])
+                        try:
+                                cipher = AESCipher(config.AES_KEY)
+                                secretkey = cipher.encrypt(account['email'])
+                                account['secretkey'] = secretkey
+                                user_m.insert([account])
+                        except Exception as e:
+                                flash(str(e))
+                                return render_template('pages/login.html', title=config.APP_TITLE)
         except Exception as e:
-                print(str(e))
                 flash(str(e))
                 
         return render_template('pages/login.html', title=config.APP_TITLE)
