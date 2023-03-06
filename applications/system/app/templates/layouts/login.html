@@ -23,7 +23,7 @@
     {% if messages %}
     <div class="messages-block text-center p-5 card">
         {% for category, message in messages %}
-        <div class="ui {{ category }} message flash">{{ message }}</div>
+        <div class="ui {{ category }} message flash text-danger">{{ message }}</div>
         {% endfor %}
     </div>
     {% endif %}

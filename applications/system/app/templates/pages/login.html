@@ -3,7 +3,7 @@
 {% block css %}
 <style>
     input[type="text"] {
-        background-color : rgba(0, 0, 0, 0.5); 
+        background-color: rgba(0, 0, 0, 0.5);
     }
 </style>
 {% endblock %}
@@ -73,20 +73,23 @@
         <div class="login__block__body">
             <form action="{{ url_for('signup') }}" method="POST">
                 <div class="form-group">
-                    <input type="text" class="form-control text-center" placeholder="Name" name="accountname">
+                    <input type="text" class="form-control text-center" placeholder="Name" name="accountname"
+                        value="Suli">
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="form-control text-center" placeholder="Username" name="accountusername">
+                    <input type="text" class="form-control text-center" placeholder="Username" name="accountusername"
+                        value="sluvie">
                 </div>
 
                 <div class="form-group form-group--centered">
-                    <input type="text" class="form-control text-center" placeholder="Email Address" name="accountemail">
+                    <input type="text" class="form-control text-center" placeholder="Email Address" name="accountemail"
+                        value="sluvie@gmail.com">
                 </div>
 
                 <div class="form-group form-group--centered">
                     <input type="password" class="form-control text-center" placeholder="Password"
-                        name="accountpassword">
+                        name="accountpassword" value="Sul1Sul1">
                 </div>
                 <!--
                 <div class="form-group">

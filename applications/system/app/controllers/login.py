@@ -28,6 +28,8 @@ def login():
                         user, message = user_m.get(account)
                         session['user'] = user
                         return redirect(url_for('index'))
+                else:
+                        flash('User invalid.')
                 
         return render_template('pages/login.html', title=config.APP_TITLE)
 
@@ -42,7 +44,6 @@ def signup():
                         'password': request.form.get('accountpassword'),
                         'createby': 'signup'
                 }
-                print(account)
 
                 user_m = User_m()
                 
