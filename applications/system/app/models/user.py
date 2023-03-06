@@ -9,7 +9,7 @@ class User_m(BaseTable):
         super().__init__()
         
         
-    def validate_register(self, key):
+    def validate_register_account(self, key):
         try:
             data, message = self.execute("SELECT 1 FROM t_user WHERE email=%s or username=%s", (key, key, ))
             if data == None or data == []:

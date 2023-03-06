@@ -31,6 +31,8 @@ def login():
                         user, message = user_m.get(account)
                         session['user'] = user
                         return redirect(url_for('index'))
+                else:
+                        flash('User invalid.')
                 
         return render_template('pages/login.html', title=config.APP_TITLE)
 
@@ -46,6 +48,10 @@ def signup():
                         'secretkey': '',
                         'createby': 'system-signup'
                 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 053f8f19361fc7014fcc177203a0c9920887ffb2
                 user_m = User_m()
                 
                 # validate the email
